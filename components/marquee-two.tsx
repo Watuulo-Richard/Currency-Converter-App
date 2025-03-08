@@ -1,44 +1,37 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "./magicui/marquee";
-// import { Marquee } from "@/registry/magicui/marquee";
 
 const reviews = [
   {
-    name: "Watuulo Richard",
-    username: "@jackal-dev",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "UGANDA",
+    body: "1 UG = 0.00027$",
+    img: "/flag-uganda.jpg",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "KENYA",
+    body: "1 KE = 0.0077$",
+    img: "/flag-kenya.jpg",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "TANZANIA",
+    body: "1 TZ = 0.00038$",
+    img: "/flag-tanzania.jpg",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    name: "RWANDA",
+    body: "1 RW = 0.00071$",
+    img: "/flag-rwanda.jpg",
   },
-//   {
-//     name: "Jenny",
-//     username: "@jenny",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: "https://avatar.vercel.sh/jenny",
-//   },
-//   {
-//     name: "James",
-//     username: "@james",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: "https://avatar.vercel.sh/james",
-//   },
+  {
+    name: "BURUNDI",
+    body: "1 BI = 0.00034$",
+    img: "flag-burundi.jpg",
+  },
+  {
+    name: "DRC",
+    body: "1 DRC = 0.00035$",
+    img: "flag-democratic-republic-congo.jpg",
+  },
 ];
 
 const firstRow = reviews;
@@ -47,12 +40,10 @@ const firstRow = reviews;
 const ReviewCard = ({
   img,
   name,
-  username,
   body,
 }: {
   img: string;
   name: string;
-  username: string;
   body: string;
 }) => {
   return (
@@ -65,16 +56,19 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+      <div className="flex flex-col items-center">
+        <div className="w-1/2 flex flex-row">
+          <div className="w-60 h-20">
+            <img className="rounded-md h-full w-full" alt="" src={img} />
+          </div>
+        </div>
+        <div className="w-1/2">
+          <div className="flex flex-col justify-center items-center">
+            <p className="text-sm font-medium dark:text-white/40">{name}</p>
+            <blockquote className="mt-2 text-sm">{body}</blockquote> 
+          </div>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
     </figure>
   );
 };
@@ -82,9 +76,9 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:30s] w-96">
+      <Marquee pauseOnHover className="[--duration:60s] w-96">
         {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+          <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
       {/* <Marquee reverse pauseOnHover className="[--duration:20s]">

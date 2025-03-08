@@ -98,7 +98,7 @@ export default function CurrencyConverterModal() {
           Exchange
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md rounded-xl p-0 bg-white">
+      <DialogContent className="sm:max-w-md rounded-xl p-0">
         <div className="p-6 space-y-6">
           <DialogHeader className="flex flex-col items-center justify-between p-0">
             {/* <div className=""></div>
@@ -159,7 +159,7 @@ export default function CurrencyConverterModal() {
                       onChange={(e)=>setAmount(e.target.value)}
                     />
                   </div>
-                  <p className="text-gray-500 mt-2">1 {fromCurrency.value} = {conversionResult}</p>
+                  <p className="text-gray-500 mt-2"> {fromCurrency.value} = {conversionResult}</p>
                 </div>
               </div>
 
